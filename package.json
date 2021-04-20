@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "author": "Sebastan Weber",
   "lint-staged": {
-    "*.{js}": "npm run format"
+    "src/**/*.{js,json}": "npm run format"
   },
   "scripts": {
-    "format": "prettier --write **/*.js",
     "prepare": "husky install",
+    "format": "prettier --write **/*.{js,json}",
+    "lint:fix": "eslint --fix **/*.{js,json}",
     "check:staged": "lint-staged"
   },
   "devDependencies": {
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "2.2.1"
